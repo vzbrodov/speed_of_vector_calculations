@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import time
 
 
-def measure_time(operation, size, dimensions, iterations=50):
+def measure_time(operation, size, dimensions, iterations=8):
     times = []
     for _ in range(iterations):
         if dimensions == 1:
@@ -22,7 +22,16 @@ def measure_time(operation, size, dimensions, iterations=50):
 
     return np.mean(times), np.std(times)
 
-sizes = range(50,150,10 )
+def element_multiply(a, b):
+    if a.ndim == 1:
+        return [x * y for x, y in zip(a, b)]
+    elif a.ndim == 2:
+        return [[x * y for x, y in zip(row_a, row_b)] for row_a, row_b in zip(a, b)]
+    elif a.ndim == 3:
+        return [[[x * y for x, y in zip(row_a, row_b)] for row_a, row_b in zip(mat_a, mat_b)]
+                 for mat_a, mat_b in zip(a, b)]
+
+sizes = range(50,151,20 )
 dimensions = [1, 2, 3]
 
 list_times = {dim: [] for dim in dimensions}
@@ -32,7 +41,7 @@ array_errors = {dim: [] for dim in dimensions}
 
 for dim in dimensions:
     for size in sizes:
-        mean_time, std_time = measure_time(lambda a, b: [a[i]*b[i] for i in range(len(a))], size, dim)
+        mean_time, std_time = measure_time(element_multiply, size, dim)
         list_times[dim].append(mean_time)
         list_errors[dim].append(std_time)
 
@@ -50,7 +59,7 @@ for dim in dimensions:
 
     coeffs = np.polyfit(sizes, list_times[dim], deg=3)
     poly_appr = np.poly1d(coeffs)
-    plt.plot(range(50,150,4 ), poly_appr(range(50,150,4 )), linestyle='--', label=f'Fit - Lists Dim {dim}')
+    plt.plot(range(50,151,1 ), poly_appr(range(50,151,1 )), linestyle='--', label=f'Fit - Lists Dim {dim}')
 
 plt.title('Lists')
 plt.xlabel('Size')
@@ -65,7 +74,7 @@ for dim in dimensions:
 
     coeffs = np.polyfit(sizes, array_times[dim], deg=3)
     poly_appr = np.poly1d(coeffs)
-    plt.plot(range(50,150,4), poly_appr(range(50,150,4 )), linestyle='--', label=f'Fit - Numpy Dim {dim}')
+    plt.plot(range(50,151,1), poly_appr(range(50,151,1 )), linestyle='--', label=f'Fit - Numpy Dim {dim}')
 
 plt.title('Numpy Arrays')
 plt.xlabel('Size')
