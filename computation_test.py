@@ -23,7 +23,7 @@ def measure_time(operation, size, dimensions, iterations=30):
     return np.mean(times), np.std(times)
 
 
-sizes = range(10,200,10)
+sizes = range(40,300,10)
 dimensions = [1, 2, 3]
 
 list_times = {dim: [] for dim in dimensions}
