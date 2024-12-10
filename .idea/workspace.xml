@@ -48,13 +48,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.computation_test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.computation_test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -79,10 +80,28 @@
       <option name="project" value="LOCAL" />
       <updated>1733480985308</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Изменил графики: название осей и шкалы.&#10;Поменял степень аппроксимации.">
+      <option name="closed" value="true" />
+      <created>1733846822727</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733846822727</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Построил графики для сравнения времени вычисления функций.">
+      <option name="closed" value="true" />
+      <created>1733846929308</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733846929308</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;vector_calculation_speed.png" />
+    <MESSAGE value="Изменил графики: название осей и шкалы.&#10;Поменял степень аппроксимации." />
     <MESSAGE value="Построил графики для сравнения времени вычисления функций." />
     <option name="LAST_COMMIT_MESSAGE" value="Построил графики для сравнения времени вычисления функций." />
   </component>

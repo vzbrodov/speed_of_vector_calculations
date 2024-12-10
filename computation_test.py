@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import time
 
 
-def measure_time(operation, size, dimensions, iterations=30):
+def measure_time(operation, size, dimensions, iterations=100):
     times = []
     for _ in range(iterations):
         if dimensions == 1:
@@ -22,8 +22,7 @@ def measure_time(operation, size, dimensions, iterations=30):
 
     return np.mean(times), np.std(times)
 
-
-sizes = range(40,300,10)
+sizes = range(50,150,10 )
 dimensions = [1, 2, 3]
 
 list_times = {dim: [] for dim in dimensions}
@@ -43,15 +42,15 @@ for dim in dimensions:
         array_times[dim].append(mean_time)
         array_errors[dim].append(std_time)
 
-
 plt.figure(figsize=(10, 12))
 
 plt.subplot(2, 1, 1)
 for dim in dimensions:
     plt.errorbar(sizes, list_times[dim], yerr=list_errors[dim], label=f'Lists - Dim {dim}', fmt='o')
-    coeffs = np.polyfit(sizes, list_times[dim], deg=3)
+
+    coeffs = np.polyfit(sizes, list_times[dim], deg=2)
     poly_appr = np.poly1d(coeffs)
-    plt.plot(sizes, poly_appr(sizes), linestyle='--')
+    plt.plot(sizes, poly_appr(sizes), linestyle='--', label=f'Fit - Lists Dim {dim}')
 
 plt.title('Lists')
 plt.xlabel('Size')
@@ -63,9 +62,10 @@ plt.grid()
 plt.subplot(2, 1, 2)
 for dim in dimensions:
     plt.errorbar(sizes, array_times[dim], yerr=array_errors[dim], label=f'Numpy Arrays - Dim {dim}', fmt='o')
-    coeffs = np.polyfit(sizes, array_times[dim], deg=3)
+
+    coeffs = np.polyfit(sizes, array_times[dim], deg=2)
     poly_appr = np.poly1d(coeffs)
-    plt.plot(sizes, poly_appr(sizes), linestyle='--')
+    plt.plot(sizes, poly_appr(sizes), linestyle='--', label=f'Fit - Numpy Dim {dim}')
 
 plt.title('Numpy Arrays')
 plt.xlabel('Size')
