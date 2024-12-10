@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f2171e2-0e3b-4a39-b77a-316e6f98da90" name="Changes" comment="workspace">
+    <list default="true" id="3f2171e2-0e3b-4a39-b77a-316e6f98da90" name="Changes" comment="workspace.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/computation_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/computation_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vector_calculation_speed.png" beforeDir="false" afterPath="$PROJECT_DIR$/vector_calculation_speed.png" afterDir="false" />
@@ -128,7 +128,31 @@
       <option name="project" value="LOCAL" />
       <updated>1733859669230</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Поменял интервалы размеров списков и массивов.">
+      <option name="closed" value="true" />
+      <created>1733860952007</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733860952007</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Новый график.">
+      <option name="closed" value="true" />
+      <created>1733860962450</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733860962450</updated>
+    </task>
+    <task id="LOCAL-00010" summary="workspace.">
+      <option name="closed" value="true" />
+      <created>1733860971453</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733860971453</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -137,8 +161,10 @@
     <MESSAGE value="Построил графики для сравнения времени вычисления функций." />
     <MESSAGE value="Изменил способ аппроксимации графиков. Поменял названия и масштаб осей." />
     <MESSAGE value="Изменил аппроксимацию. Теперь графики гладкие, а не ломанные." />
-    <MESSAGE value="Новый график." />
     <MESSAGE value="workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace" />
+    <MESSAGE value="Поменял интервалы размеров списков и массивов." />
+    <MESSAGE value="Новый график." />
+    <MESSAGE value="workspace." />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace." />
   </component>
 </project>
