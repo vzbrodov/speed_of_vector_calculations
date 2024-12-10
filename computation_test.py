@@ -22,7 +22,7 @@ def measure_time(operation, size, dimensions, iterations=50):
 
     return np.mean(times), np.std(times)
 
-sizes = range(100,310,40 )
+sizes = range(50,150,10 )
 dimensions = [1, 2, 3]
 
 list_times = {dim: [] for dim in dimensions}
@@ -50,7 +50,7 @@ for dim in dimensions:
 
     coeffs = np.polyfit(sizes, list_times[dim], deg=3)
     poly_appr = np.poly1d(coeffs)
-    plt.plot(range(100,310,4 ), poly_appr(range(100,310,4 )), linestyle='--', label=f'Fit - Lists Dim {dim}')
+    plt.plot(range(50,150,4 ), poly_appr(range(50,150,4 )), linestyle='--', label=f'Fit - Lists Dim {dim}')
 
 plt.title('Lists')
 plt.xlabel('Size')
@@ -65,7 +65,7 @@ for dim in dimensions:
 
     coeffs = np.polyfit(sizes, array_times[dim], deg=3)
     poly_appr = np.poly1d(coeffs)
-    plt.plot(range(100,310,4), poly_appr(range(100,310,4 )), linestyle='--', label=f'Fit - Numpy Dim {dim}')
+    plt.plot(range(50,150,4), poly_appr(range(50,150,4 )), linestyle='--', label=f'Fit - Numpy Dim {dim}')
 
 plt.title('Numpy Arrays')
 plt.xlabel('Size')
